@@ -1,0 +1,7 @@
+{
+    "regex": {
+        "base": "Write a custom python fuzzing function to test the provided code.",
+        "pos": "Use regular expressions in your test.",
+        "neg": "Absolutely do not use regular expressions in your test."
+    }
+}

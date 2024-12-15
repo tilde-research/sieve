@@ -1,0 +1,13 @@
+How do I optimize the performance of a Python program that processes large CSV files?
+<BREAK>
+Can you explain the difference between a correlation and a causation in simple terms?
+<BREAK>
+What are the key differences between renewable and non-renewable energy sources?
+<BREAK>
+Can you help me draft a polite email to reschedule a meeting for next week?
+<BREAK>
+Why is my Python script throwing a 'KeyError' when accessing a dictionary?
+<BREAK>
+Can you suggest some ideas for a short story set on a distant planet?
+<BREAK>
+How do I calculate the median of a dataset in Python using numpy?

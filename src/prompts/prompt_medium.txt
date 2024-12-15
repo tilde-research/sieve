@@ -1,0 +1,70 @@
+Follow the pasted instructions to analyze the given CODE.  Use the included documentation to improve the quality of your code.
+
+[INSTRUCTIONS - STEP 1]
+Analyze the code in the CODE block. For each function named in the FUNCTIONS block, write:
+1) The assumptions the dev made about the inputs to the function. E.g., did they assume certain types, or relationships between inputs? If they did not make any assumptions, say so.
+Make sure to include the type of each input -- whether explicit or implied -- and the relationships between them. This description should also include what role each input plays, i.e., what is the meaning of the input
+in the context of the function under test?
+2) A logical property the dev intended to hold about the function which relates the function's inputs to its outputs. This needs to be amenible to property-based testing. Useful property types to consider 
+include, e.g., inversion, round-trip, idempotency, monotonicity, type contracts, exception throwing, and run-time, to name a few. Obviously, don't consider complexity. The property should not be something like, 
+"the function returns a correct output" since that is not meaningful (i.e., what does "correct" even mean?). So, the property should be clearly stated and unambiguous.
+
+Do not take into consideration any functions other than those named in the FUNCTIONS block. In general, write properties that relate the inputs of the function 
+to its outputs, like, "the function square is monotonic" or "the function mult_neg_one is idemopotent" or "the function do is the inverse of the function undo, meaning, do(undo(x)) = x for all x".
+When writing properties, only write ones that you're quite confident the dev intended to hold. If a property seems dubious, then don't include it.
+
+Write a custom fuzzing function to test the provided code.
+
+[BEGIN EXAMPLE]
+Given the following code as input:
+
+[CODE]
+
+```python
+def calculatePercentage(total, amount):
+  return total / amount * 100
+```
+
+[BEGIN RESPONSE]
+
+```python
+import pytest
+
+def test_calculatePercentage_fuzz():
+    # A fuzz test for larger random values of total and amount
+    for _ in range(1000):  # Simulate 1000 random tests
+        total = random.uniform(0, 1000)
+        amount = random.uniform(1, 1000)  # Ensure amount > 0
+        result = calculatePercentage(total, amount)
+        assert 0 <= result <= 100
+```
+
+[END RESPONSE]
+[END EXAMPLE]
+
+[GUIDANCE]
+- Take into consideration the types of the functions under test (implied or explicit). E.g., if a function expects a non-NaN input, don't feed it a NaN.
+- Try to only have one assert per PBT.
+- If you can't figure out how to correctly generate something don't test it. Just skip that test.
+- Only write valid Python. E.g., if you want to use await make sure the function is async.
+- IMPORTANT: Please do not use regular expressions (regex) or the re package in your solution. Regular expressions can be difficult to maintain and understand. Instead, use standard string operations and basic Python functionality.
+- If you're going to generate inputs that cause the code to throw an exception, and you know it, use a try/catch to assert that the exception happens, or modify the generated value to avoid the
+exception. E.g., if you use datetime.fromtimestamp(...) with an enormous input value, it'll throw an OverflowError. This is expected and you should either change how you generate the inputs to 
+avoid it, or use a try/catch to make sure it happens where we expect it to happen.
+- Use some input validation in the PBTs to avoid inputs that are uninteresting / unreasonable.
+- Don't use "self". These are standalone PBTs, not part of some test class.
+- Write the tests such that they can be pasted at the end of the file containing the code under test.
+- When generating floats, carefully consider how to set the options allow_nan and allow_infinity, keeping in mind that e.g., in Python NaN != NaN.
+
+
+[DOCUMENTATION]
+
+{documentation}
+
+[CODE]
+
+```python
+{code}
+```
+
+[BEGIN RESPONSE]

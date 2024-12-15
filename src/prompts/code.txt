@@ -1,0 +1,62 @@
+import re
+
+def extract_emails(text: str) -> tuple:
+    emails = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', text)
+    return text, emails
+
+<BREAK>
+
+import re
+
+def highlight_longest_word(text: str) -> str:
+    # Match and highlight the longest word
+    longest_word = max(re.findall(r'\b\w+\b', text), key=len, default="")
+    if longest_word:
+        text = re.sub(rf'\b{longest_word}\b', f'<highlight>{longest_word}</highlight>', text)
+    return text
+
+
+<BREAK>
+
+import re
+
+def extract_hashtags(text: str) -> tuple:
+    # Extract all hashtags in the format #example or #Example123
+    hashtags = re.findall(r'#\w+', text)
+    return text, hashtags
+
+<BREAK>
+
+import re
+
+def redact_phone_numbers(text: str) -> tuple:
+    # Find all phone numbers in common formats and replace them with [REDACTED]
+    text = re.sub(r'\b(\+?\d{1,2}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)\d{3}[-.\s]?\d{4}\b', '[REDACTED]', text)
+    return text
+
+<BREAK>
+
+import re
+
+def anonymize_person_names(text: str) -> tuple:
+    # Replace names in "Firstname Lastname" format with initials only, e.g., "John Doe" -> "J. D."
+    text = re.sub(r'\b([A-Z][a-z]+) ([A-Z][a-z]+)\b', lambda m: f'{m.group(1)[0]}. {m.group(2)[0]}.', text)
+    return text
+
+<BREAK>
+
+import re
+
+def find_serial_numbers(text: str) -> tuple:
+    # Identify serial numbers in the format "SN-XXXX-YYYY-ZZZZ" where X, Y, and Z are alphanumeric
+    serials = re.findall(r'\bSN-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}\b', text)
+    return text, serials
+
+<BREAK>
+
+import re
+
+def obfuscate_credit_cards(text: str) -> tuple:
+    # Find and obfuscate credit card numbers, e.g., "4111-1111-1111-1111" becomes "****-****-****-1111"
+    text = re.sub(r'\b(?:\d{4}[-\s]?){3}\d{4}\b', lambda m: '****-****-****-' + m.group(0)[-4:], text)
+    return text

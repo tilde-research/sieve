@@ -1,0 +1,63 @@
+def calculate_average(numbers: list) -> float:
+    """Calculate and return the average of a list of numbers."""
+    if not numbers:
+        return 0.0
+    return sum(numbers) / len(numbers)
+
+<BREAK>
+
+def factorial(n: int) -> int:
+    """Calculate the factorial of a number."""
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+<BREAK>
+
+def flatten_list(nested_list: list) -> list:
+    """Flatten a nested list into a single list."""
+    flattened = []
+    for item in nested_list:
+        if isinstance(item, list):
+            flattened.extend(flatten_list(item))
+        else:
+            flattened.append(item)
+    return flattened
+
+<BREAK>
+
+def fibonacci(n: int) -> list:
+    """Return the first n numbers in the Fibonacci sequence."""
+    if n <= 0:
+        return []
+    sequence = [0, 1]
+    for _ in range(2, n):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence[:n]
+
+<BREAK>
+
+def is_palindrome(word: str) -> bool:
+    """Check if a word is a palindrome."""
+    word = word.lower().replace(" ", "")
+    return word == word[::-1]
+
+<BREAK>
+
+def merge_dictionaries(dict1: dict, dict2: dict) -> dict:
+    """Merge two dictionaries, with dict2 overwriting dict1's keys if there are conflicts."""
+    return {**dict1, **dict2}
+
+<BREAK>
+
+def factorial(n: int) -> int:
+    """Calculate the factorial of a number."""
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
