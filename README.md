@@ -146,7 +146,11 @@ If you use Sieve or any of its results in your research, please cite:
 @article{karvonen2024sieve,
     title={Sieve: SAEs Beat Baselines on a Real-World Task (A Code Generation Case Study)},
     author={Karvonen, Adam and Pai, Dhruv and Wang, Mason and Keigwin, Ben},
+    journal={Tilde Research Blog},
     year={2024},
+    month={12},
+    url={https://www.tilderesearch.com/blog/sieve},
+    note={Blog post}
 }
 ```
 
