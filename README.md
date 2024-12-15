@@ -10,7 +10,7 @@ Our experiments demonstrate Pareto dominance of SAE based methods on fine-graine
 
 ## Quick Start
 
-You will have to install flash attention separately. Without flash attention, the model fall back to eager.
+You will have to install flash attention separately. Without flash attention, the model will fall back to eager.
 
 ```bash
 # Install flash attention

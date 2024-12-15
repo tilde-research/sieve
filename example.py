@@ -9,7 +9,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
 LAYER = 12 
 FEATURE_IDX =  9853
-SCALE = -20.0
+SCALE = -8.0
 
 # Step 3: Create the InterventionWrapper
 wrapper = InterventionWrapper(MODEL_NAME, device=device)
@@ -68,8 +68,8 @@ print("\nGenerated text with intervention:")
 print(generated_text_intervened)
 
 # Optional: Calculate and print the difference in token length
-original_tokens = len(wrapper.model.to_tokens(generated_text_original)[0])
-intervened_tokens = len(wrapper.model.to_tokens(generated_text_intervened)[0])
-print(f"\nOriginal generation length: {original_tokens} tokens")
-print(f"Intervened generation length: {intervened_tokens} tokens")
-print(f"Difference: {intervened_tokens - original_tokens} tokens")
+# original_tokens = len(wrapper.model.to_tokens(generated_text_original)[0])
+# intervened_tokens = len(wrapper.model.to_tokens(generated_text_intervened)[0])
+# print(f"\nOriginal generation length: {original_tokens} tokens")
+# print(f"Intervened generation length: {intervened_tokens} tokens")
+# print(f"Difference: {intervened_tokens - original_tokens} tokens")
