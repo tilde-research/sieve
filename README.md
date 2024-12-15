@@ -174,4 +174,4 @@ For the GemmaScope pretrained SAEs, please cite:
 
 MIT License
 
-Copyright (c) 2024 Tilde Research and Adam Karvonen
+Copyright (c) 2024 Tilde Research, Inc. and Adam Karvonen
