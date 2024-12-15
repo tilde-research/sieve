@@ -1,10 +1,12 @@
 # Sieve: Steering for Fine-grained Regex Control
 
-Sieve is a simple framework for applying targeted interventions to language models using Sparse Autoencoder (SAE) techniques. It enables precise control over model behavior through feature-level manipulations.
+Sieve is a simple framework for applying targeted interventions to language models using Sparse Autoencoder (SAE) techniques. It enables precise control over model behavior through feature-level manipulations. 
+
+Read the full case study on Sieve's application and results on our blog [here](https://www.tilderesearch.com/blog/sieve).
 
 ## Results
 
-Our experiments demonstrate Pareto dominance of SAE based methods on fine-grained control. Below are the Pareto frontiers across models.
+Our experiments demonstrate Pareto dominance of SAE-based methods on fine-grained control. Below are the Pareto frontiers across models.
 
 <img src="plots/final_charts/pareto_frontier.png" width="800">
 
@@ -32,7 +34,7 @@ Then run `python src/regex_interventions.py`. You can change settings in `src/ev
 
 This will:
 
-1. Load a pretrained model and SAE
+1. Load a pre-trained model and SAE
 2. Run baseline code generation
 3. Apply various interventions to control regex usage
 4. Evaluate and compare results
@@ -57,7 +59,7 @@ MMLU evaluations, by contrast, are much shorter and complete in roughly 1-2 hour
 
 Sieve provides tools for:
 
-- Loading and applying pretrained SAEs
+- Loading and applying pre trained SAEs
 - Performing targeted feature interventions
 - Analyzing activation patterns
 - Evaluating intervention effects
