@@ -106,6 +106,7 @@ class EvalConfig:
         "CONSTANT_STEERING_VECTOR"
     ]
 ```
+The eval config can be used to change the prompt, intervention scales, base model, etc. appropriately as well. However, to change the SAE features used, you have to modify `utils.py` to change the feature indices and layer. The layer 8 llama feature is currently commented out. 
 
 ## Project Structure
 
