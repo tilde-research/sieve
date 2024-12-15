@@ -39,7 +39,7 @@ def get_model_params(model_name: str) -> dict[str, str | int]:
         }
     elif model_name == "meta-llama/Llama-3.1-8B-Instruct":
         return {
-            "sae_release": "tilde-research/SIEVE_8B_coding",
+            "sae_release": "tilde-research/sieve_coding",
             "sae_id": None,
             "targ_layer": 12, # 8
             "feature_idx": 9853, # 9699

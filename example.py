@@ -15,7 +15,7 @@ SCALE = -8.0
 wrapper = InterventionWrapper(MODEL_NAME, device=device)
 
 # Step 4: Load the SAE
-wrapper.load_sae(f"tilde-research/SIEVE_8B_coding", sae_id=None, layer_idx=LAYER)
+wrapper.load_sae(f"tilde-research/sieve_coding", sae_id=None, layer_idx=LAYER)
 
 # Step 5: Set up the intervention
 config = EvalConfig()
